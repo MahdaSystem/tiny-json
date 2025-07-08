@@ -292,7 +292,7 @@ static char* numValue( char* ptr, json_t* property ) {
         unsigned int const maxdigits = ( negative? sizeof min: sizeof max ) - 1;
         unsigned int const len = ( unsigned int const ) ( ptr - value );
         if ( len > maxdigits ) return 0;
-        if ( negative == 0 )
+        if ( !negative )
             property->type = JSON_UINTEGER;
         if ( len == maxdigits ) {
             char const tmp = *ptr;
